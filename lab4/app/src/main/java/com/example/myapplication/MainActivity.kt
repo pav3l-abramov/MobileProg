@@ -80,10 +80,6 @@ class MainActivity : AppCompatActivity() {
         task13.id = 13
         task13.affairs = "the"
         task13.status = false
-        val task14 = AffairsModel()
-        task14.id = 14
-        task14.affairs = "sharpest"
-        task14.status = false
 
         affairsList.add(task1)
         affairsList.add(task2)
@@ -98,7 +94,6 @@ class MainActivity : AppCompatActivity() {
         affairsList.add(task11)
         affairsList.add(task12)
         affairsList.add(task13)
-        affairsList.add(task14)
         return affairsList
     }
 }
