@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tasksListFragment">
+
+    <fragment
+        android:id="@+id/tasksListFragment"
+        android:name="com.example.myapplication.FirstFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/action_tasksListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_tasksListFragment_to_itemToAddFragment"
+            app:destination="@id/itemToAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.myapplication.ThirdFragment"
+        android:label="Details"
+        tools:layout="@layout/info">
+        <argument
+            android:name="toDoAction_id"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/itemToAddFragment"
+        android:name="com.example.myapplication.SecondFragment"
+        android:label="What to do?"
+        tools:layout="@layout/create">
+        <action
+            android:id="@+id/action_itemToAddFragment_to_tasksListFragment"
+            app:destination="@id/tasksListFragment" />
+    </fragment>
+</navigation>
