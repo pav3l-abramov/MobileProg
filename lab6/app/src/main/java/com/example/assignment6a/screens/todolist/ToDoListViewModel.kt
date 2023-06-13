@@ -34,21 +34,7 @@ class ToDoListViewModel(application: Application): AndroidViewModel(application)
         REPOSITORY.delTask(taskModel) {
             onSuccess()
         }
-//        viewModelScope.launch (Dispatchers.IO) {
-//            REPOSITORY.deleteTask(taskModel) {
-//                onSuccess()
-//            }
-//        }
     }
 
-//    fun updateActionCheckStatus(taskModel: TaskModel, onSuccess:() -> Unit) {
-//        val newTaskModel = taskModel.copy(checkStatus = !taskModel.status)
-//        // action.checkStatus = !action.checkStatus // areContentsTheSame returns true in this case, so don't use it
-//        viewModelScope.launch (Dispatchers.IO) {
-//            REPOSITORY.updateTask(newTaskModel) {
-//                onSuccess()
-//            }
-//        }
-//    }
 
 }

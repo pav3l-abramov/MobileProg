@@ -32,7 +32,6 @@ class ToDoAdapter: RecyclerView.Adapter<ToDoAdapter.ToDoListViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ToDoListViewHolder, position: Int) {
-        //holder.itemView.item_title.text = toDoList[position].title
         holder.itemView.checkbox.text = toDoList[position].title
         holder.itemView.checkbox.isChecked = toDoList[position].status
         if (toDoList[position].status) holder.itemView.checkbox.paintFlags = holder.itemView.checkbox.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
@@ -56,18 +55,8 @@ class ToDoAdapter: RecyclerView.Adapter<ToDoAdapter.ToDoListViewHolder>() {
         }
         holder.itemView.checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                //db.updateStatus(item.id, 1)
-//                GlobalScope.launch(Dispatchers.IO) {
-//                    //db.toDoDao().update(Task(item.id, item.task, item.task, toBoolean(item.status)))
-//                }
                 ToDoListFragment.updateTask(toDoList[holder.adapterPosition])
-                //holder.task.paintFlags = holder.task.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             } else {
-                //db.updateStatus(item.id, 0)
-//                GlobalScope.launch(Dispatchers.IO) {
-//                    //db.toDoDao().update(Task(item.id, item.task, item.task, toBoolean(item.status)))
-//                }
-                //holder.task.paintFlags = holder.task.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                 ToDoListFragment.updateTask(toDoList[holder.adapterPosition])
             }
         }
@@ -79,17 +68,4 @@ class ToDoAdapter: RecyclerView.Adapter<ToDoAdapter.ToDoListViewHolder>() {
         holder.itemView.checkbox.setOnCheckedChangeListener(null)
     }
 
-//    suspend fun deleteItem(position: Int) {
-//        val item = toDoList!![position]
-//        REPOSITORY.deleteTask(taskModel)
-//        todoList!!.removeAt(position)
-//        notifyItemRemoved(position)
-//    }
-//
-//    fun delete(taskModel: TaskModel, onSuccess:() -> Unit) =
-//        viewModelScope.launch (Dispatchers.IO) {
-//            REPOSITORY.deleteTask(taskModel) {
-//                onSuccess()
-//            }
-//        }
 }
